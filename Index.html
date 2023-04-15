@@ -22,22 +22,22 @@
             <div class="blurbDiv">
                 You can sign up here for something. 
                 I am not sure what but its a thing.
-                Could be a nice surprise
+                Could be a nice surprise 
             </div>
-            <form action="/Images/text.txt" method="post">
+            <form id="SignUpForm" action="" method="post">
                 <div class="formDiv">
-                    <label for="forename">Forname</label>            
-                    <label for="surname">Surname</label>
-                    <input type="text"  id = "forename" autocomplete="given-name">
-                    <input type="text"  id = "surname" autocomplete="family-name">
-                    <label for="emailAd">Email</label>
-                    <label for="mobile">Phone Number</label>
-                    <input type="email"  id = "emailAd" autocomplete="email">
-                    <input type=""  id = "mobile" autocomplete="tel">
-                    <label for="password">Password</label>
-                    <label for="pswdCheck">Confirm Password</label>
-                    <input type="text" id="password">
-                    <input type="text" id="pswdCheck">
+                    <label for="forename">*Forname</label>            
+                    <label for="surname">*Surname</label>
+                    <input type="text" required id = "forename" pattern="[A-Za-z']+" autocomplete="given-name">
+                    <input type="text" required id = "surname" pattern="[A-Za-z']+" autocomplete="family-name">
+                    <label for="emailAd">*Email</label>
+                    <label for="mobile">Mobile Number</label>
+                    <input type="email" required id = "emailAd" autocomplete="email">
+                    <input type="tel"  id = "mobile" autocomplete="tel" pattern="^\d{4}\s?\d{3}\s?\d{3}$" title="10 digits long. you can input a space between the 4th and 5th number and the 7th and 8th if required">
+                    <label for="password">*Password</label>
+                    <label for="pswdCheck">*Confirm Password</label>
+                    <input type="password" required id="password" class="pasWrd">
+                    <input type="password" required id="pswdCheck" class="passWrd">
                 </div>
                 <button>Create Account</button>
             </form>
