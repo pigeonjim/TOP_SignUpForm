@@ -2,47 +2,52 @@
     font-family: octobot-font;
     src: url(fonts/Transformers\ Movie.ttf);
 }
-
 :root{
  --custom-font: octobot-font;
+ --imgdiv-width: 30vw;
 }
 body{
-    background-color: #031324;
+    background-color: #000000;
     margin: 0px;
-    padding-top: 5vh;
 }
 .mainDiv{
     width: 80vw;
-    height: 90vh;
-    display: flex;
+    height: 100vh;
+    display: grid;
     flex-direction: row;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 25% 35% 5%;
     background-color: #2f3d4e;
     margin: auto;
-    justify-content:space-between;
     border-radius: 10px;
 }
 .imgDiv{
-    flex: 1 1 30%;
+    height: 99vh;
+    position: relative;
+    grid-row-start: 1;
+    grid-row-end: 4;
 }
 .formDiv{
     height: 30vh;   
     background-color: #586c70;
     align-self: center;
-    flex: 3 3 60%;
     min-width: 0;
     overflow: auto;
     display: flex;
     flex-direction: column;
-}   
+    box-shadow: 1vh 1vh 2px 1px #00000051 ;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}       
 img{
     border-radius: 15px;
     object-fit:cover;
-    height: 90vh;
-    width: 30vw;
+    height: inherit;
+    width: var(--imgdiv-width);
 }
 label, button{
-    color: #3c0427a1 ;
     font-family: var(--custom-font, sans-serif);
+    font-size: 17px;
 }
 input{
     border-radius: 5px;
@@ -55,19 +60,32 @@ form{
     margin: auto;
     padding-left: 2vw;
 }
+label{
+    color: #3c0426fa ;
+    text-shadow: 0.5px 0.5px #ccb4b4;
+}
 button{
-    width:25%;
+    width:35%;
     align-self: center;
     margin-bottom: 2vh;
-    border-radius: 5px;
-    background-color: #675B5B ;
-    font-size: larger;
-
-
-}   
+    border-radius: 7px 0px;
+    background-color: #675b64c7 ;
+    font-size: 2.5vh;
+    grid-row-start: 3;
+    justify-self:center;
+    color: #d48ec4;
+    text-shadow: 1px 1px #000000;
+}
 input:focus{
     border-radius: 10px;
     border-style: solid;
     border-width: 3px;
     border-color: #d4526a;
+}
+.logoBanner{
+    position: absolute;
+    height: 20vh;
+    background-color: #00000064;
+    top: 20vh;
+    width: var(--imgdiv-width);
 }
