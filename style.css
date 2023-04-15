@@ -2,8 +2,13 @@
     font-family: octobot-font;
     src: url(fonts/Transformers\ Movie.ttf);
 }
+@font-face {
+    font-family: banner-font;
+    src: url(fonts/EnPhanithRam-Rpj2o.ttf);
+}
 :root{
  --custom-font: octobot-font;
+ --banner-font: banner-font;
  --imgdiv-width: 30vw;
 }
 body{
@@ -13,10 +18,7 @@ body{
 .mainDiv{
     width: 80vw;
     height: 100vh;
-    display: grid;
-    flex-direction: row;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 25% 35% 5%;
+    display: flex;
     background-color: #2f3d4e;
     margin: auto;
     border-radius: 10px;
@@ -24,57 +26,59 @@ body{
 .imgDiv{
     height: 99vh;
     position: relative;
-    grid-row-start: 1;
-    grid-row-end: 4;
 }
-.formDiv{
-    height: 30vh;   
-    background-color: #586c70;
+.rhsDiv{
+    height: 75vh;
+    width: 50vw;
     align-self: center;
-    min-width: 0;
-    overflow: auto;
     display: flex;
     flex-direction: column;
-    box-shadow: 1vh 1vh 2px 1px #00000051 ;
-    grid-row-start: 2;
-    grid-row-end: 3;
-}       
+}
+.blurbDiv{
+    max-height: 15vh;
+    flex: 1 1 0;
+    width: 75%;
+    align-self: center;
+}
+.formDiv{
+    background-color: #586c70;
+    min-width: 0;
+    flex: 1;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    box-shadow: 1vh 1vh 2px 1px #00000051;
+    padding: 2vw;
+    column-gap: 2vw;
+}  
+button{
+    width:35%;
+    margin-bottom: 2vh;
+    border-radius: 7px 0px;
+    background-color: #675b64ff ;
+    font-size: 2.5vh;
+    color: #d48ec4;
+    text-shadow: 1px 1px #000000;
+    font-family: var(--banner-font);
+    flex: 1;
+    margin-top: 2vh;
+    justify-self: center;
+}    
 img{
     border-radius: 15px;
     object-fit:cover;
     height: inherit;
     width: var(--imgdiv-width);
 }
-label, button{
-    font-family: var(--custom-font, sans-serif);
-    font-size: 17px;
-}
 input{
     border-radius: 5px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-form{
-    display: grid;  
-    grid-template-columns: 40% 40%;
-    grid-column-gap: 3vw;
-    margin: auto;
-    padding-left: 2vw;
-}
 label{
-    color: #3c0426fa ;
-    text-shadow: 0.5px 0.5px #ccb4b4;
-}
-button{
-    width:35%;
-    align-self: center;
-    margin-bottom: 2vh;
-    border-radius: 7px 0px;
-    background-color: #675b64c7 ;
-    font-size: 2.5vh;
-    grid-row-start: 3;
-    justify-self:center;
-    color: #d48ec4;
-    text-shadow: 1px 1px #000000;
+    color: rgb(9, 9, 9) ;
+    text-shadow: 1px 1px #f471f4;
+    font-family: var(--custom-font, sans-serif);
+    font-size: 20px;
 }
 input:focus{
     border-radius: 10px;
@@ -83,9 +87,36 @@ input:focus{
     border-color: #d4526a;
 }
 .logoBanner{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
     position: absolute;
     height: 20vh;
     background-color: #00000064;
     top: 20vh;
     width: var(--imgdiv-width);
+    overflow: hidden;
+    justify-items: center;
+    align-items: center;    
 }
+.rockImg{
+   object-fit:scale-down;
+   max-height: 20vh;
+   flex: 1;
+}
+h2, .blurbDiv{
+    font-family: var(--banner-font);
+    font-size: 25px;
+    color: #ffffff;
+    text-shadow: 3px 3px #000000;
+    padding: 0;     
+    margin: 0%;
+    min-height: 10px;
+    flex: 1;
+}
+.blurbDiv{
+    font-size: clamp(15px, 2vh, 20px)
+}
+form{
+    display: grid;
+    }
